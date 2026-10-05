@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nashuuu's Little Survival Space 🌸</title>
+<meta name="theme-color" content="#ffeaf1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="lock">
+<div class="bg" aria-hidden="true"><i class="cloud c1"></i><i class="cloud c2"></i><i class="cloud c3"></i></div>
+
+<!-- OPENING -->
+<section id="intro" class="intro">
+  <div class="panda intro-panda" id="introPanda" data-panda="blanket sleepy"></div>
+  <div class="intro-text">
+    <h1 class="t1">Heyyy Nashuuu 🌷</h1>
+    <p class="t2">Bubuuu...<br>Nissuuu knows these days can be a little annoying.</p>
+    <p class="t3 small">So I made you a tiny place where you can:<br>rest, complain, be dramatic, get distracted, or just exist.</p>
+    <button class="btn big t4" id="enter">Enter, bachaaaaa →</button>
+  </div>
+  <div class="flowers" id="flowers"></div>
+</section>
+
+<main id="app" hidden>
+  <header class="top">
+    <b>🌸 Nashuuu's Little Survival Space</b>
+    <button class="icon" id="themeBtn" aria-label="Night mode">🌙</button>
+  </header>
+  <nav class="chips" aria-label="Sections">
+    <a href="#home">Home</a><a href="#need">What I need</a><a href="#chaos">Chaos meter</a><a href="#room">Comfort station</a><a href="#notes">Notes</a><a href="#press">Press this</a><a href="#brain">Brain off</a><a href="#music">Music</a><a href="#mission">Mission</a>
+  </nav>
+
+  <section id="home">
+    <h2>Okayyy Nashuuuu...<br>what kind of day are we having? 😭</h2>
+    <div class="moods" id="moods"></div>
+  </section>
+
+  <section id="need">
+    <h2>Nashuuu, tell Nissuuu what you need.</h2>
+    <div class="needs" id="needs">
+      <button data-n="comfort">🫂 Comfort</button>
+      <button data-n="distract">😂 Distract me</button>
+      <button data-n="rest">😴 Let me rest</button>
+      <button data-n="talk">💬 I want to talk</button>
+      <button data-n="cheer">🌸 Cheer me up</button>
+      <button data-n="quiet">🤐 I don't want to talk</button>
+    </div>
+    <div class="card needout" id="needOut" hidden></div>
+  </section>
+
+  <section id="chaos">
+    <h2>How bad is the chaos?</h2>
+    <p class="sub">Slide it. Panda will react accordingly.</p>
+    <div class="card chaos">
+      <div class="panda" id="chaosPanda" data-panda="happy"></div>
+      <div class="chaos-label"><span id="cEmoji">🌱</span> <b id="cName">Tiny inconvenience</b></div>
+      <p id="cLine" class="line">Panda is chilling.</p>
+      <input type="range" id="chaosR" min="0" max="5" step="1" value="0" aria-label="Chaos level">
+      <div class="scale"><span>🌱</span><span>🥲</span><span>😭</span><span>😤</span><span>🫠</span><span>💀</span></div>
+      <div class="alert" id="cAlert" hidden>EMERGENCY LEVEL:<br>BUBUUU NEEDS BLANKET + REST + SNACKS.</div>
+      <p class="fine">If pain ever feels severe or scary, please contact a doctor. That's a real-human job, not a panda's. 🩷</p>
+    </div>
+  </section>
+
+  <section id="room">
+    <h2>Comfort Station</h2>
+    <p class="sub">Poke things. Everything reacts. Nissuuu checked.</p>
+    <div class="card room">
+      <div class="window"><span class="moon">🌙</span><i class="s s1">✦</i><i class="s s2">✧</i><i class="s s3">✦</i><button class="sflower" id="secretFlower" aria-label="a tiny flower on the windowsill">🌼</button></div>
+      <div class="panda room-panda" id="roomPanda" data-panda="happy"></div>
+      <div class="roomMsg" id="roomMsg">Pick something. Panda is waiting. 🐼</div>
+      <div class="items" id="items"></div>
+    </div>
+  </section>
+
+  <section id="notes">
+    <h2>Nissuuu left notes</h2>
+    <p class="sub">Drawer's open. Take as many as you want.</p>
+    <div class="card drawer">
+      <div class="paper" id="paper" hidden></div>
+      <div class="envs" id="envs"></div>
+    </div>
+  </section>
+
+  <section id="press">
+    <div class="card pressbox">
+      <div class="panda" id="pressPanda" data-panda="confused"></div>
+      <button class="giant" id="pressBtn">BUBUUU<br>PRESS THIS</button>
+      <p class="pressmsg" id="pressMsg">go on. nothing bad happens. probably.</p>
+    </div>
+  </section>
+
+  <section id="brain">
+    <div class="card brainbox">
+      <h2>Nashuuuu brain off mode</h2>
+      <p class="sub">A whole different room. Quieter.</p>
+      <button class="btn big" id="brainOpen">Turn brain off 🧠</button>
+    </div>
+  </section>
+
+  <section id="music">
+    <h2>Disappear for a while</h2>
+    <div class="cats" id="cats"></div>
+    <div class="card player" id="player">
+      <div class="disc" id="disc"><i></i></div>
+      <div class="pinfo"><b id="pTitle"></b><span id="pSub"></span></div>
+      <div class="eq" id="eq"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="bar"><i id="pBar"></i></div>
+      <button class="btn" id="pPlay">▶ Open playlist</button>
+      <p class="fine" id="pNote"></p>
+    </div>
+  </section>
+
+  <section id="mission">
+    <h2>Today's little mission</h2>
+    <div class="card mission">
+      <div class="panda" id="missionPanda" data-panda="happy"></div>
+      <p class="mtext" id="mText"></p>
+      <div class="row"><button class="btn" id="mDone">I did it 🥹</button><button class="btn ghost" id="mNext">Different one</button></div>
+      <p class="fine" id="mCount"></p>
+    </div>
+  </section>
+
+  <footer id="end">
+    <p class="chip" id="secretChip" hidden>🔐 secret found</p>
+    <h2>You reached the end, Nashuuu 🌸</h2>
+    <button class="btn big" id="finalBtn">Open Nissuuu's final surprise</button>
+    <p class="fine">Made by Nissuuu, for Nashuuu. No tracking, no sign-ups, just a tiny corner of the internet.</p>
+  </footer>
+</main>
+
+<!-- companion -->
+<div class="buddy" id="buddy"><div class="say" id="say"></div><div class="panda" id="buddyPanda" data-panda="happy"></div></div>
+
+<!-- mood sheet -->
+<div class="ov sheet" id="sheet">
+  <div class="card">
+    <div class="panda sheet-panda" id="sheetPanda" data-panda="happy"></div>
+    <h3 id="sH"></h3><p id="sP"></p>
+    <div id="sExtra"></div>
+    <div class="row" id="sGo"></div>
+    <button class="btn ghost" data-close>Close</button>
+  </div>
+</div>
+
+<!-- I need Nissuuu -->
+<div class="ov dim" id="ov-comfort">
+  <div class="walk panda" data-panda="blanket" id="comfortPanda"></div>
+  <p class="cintro">Okayyy Nashuuu...<br>Nissuuu has entered emergency comfort mode.</p>
+  <p class="cmsg" id="cMsg"></p>
+  <div class="row"><button class="btn" id="cAgain" hidden>Again 🫂</button><button class="btn ghost" data-close>I'm okay for now</button></div>
+</div>
+
+<!-- brain off -->
+<div class="ov lav" id="ov-brain">
+  <div class="stars"></div>
+  <div class="panda" id="brainPanda" data-panda="sleepy"></div>
+  <h2 id="bH">Brain officially closed for maintenance.</h2>
+  <p id="bP">No overthinking.<br>No unnecessary stress.<br>No solving the entire universe tonight.</p>
+  <div class="breath"><i></i><span id="bBreath"></span></div>
+  <p class="timer" id="bTimer"></p>
+  <div class="row" id="bBtns"><button class="btn" data-sec="30">Stay here for 30 sec</button><button class="btn" data-sec="60">Stay here for 1 min</button></div>
+  <button class="btn ghost" data-close>Back to the room</button>
+</div>
+
+<!-- night -->
+<div class="ov nightov" id="ov-night">
+  <div class="stars"></div><span class="bigmoon">🌙</span>
+  <div class="panda" data-panda="sleepy blanket"></div>
+  <h2>Goodnight Nashuuu 🌙</h2>
+  <p>Today doesn't need to be solved anymore.</p>
+  <p class="soft">Rest, bachaaaaa.</p>
+  <div class="breath"><i></i><span id="nBreath"></span></div>
+  <div class="row"><button class="btn" id="keepNight">Keep night colors</button><button class="btn ghost" id="wake">Wake up gently</button></div>
+</div>
+
+<!-- secret -->
+<div class="ov blushov" id="ov-secret">
+  <div class="card secret">
+    <h3>WAIT.<br>YOU FOUND NISSUUU'S SECRET MESSAGE 👀</h3>
+    <p class="hand">Bubuuu,<br>I can't magically make the bad days disappear.<br><br>But if this silly little website makes you smile,<br>feel a little calmer,<br>or distracts you for five minutes...<br><br>then Nissuuu considers the mission successful.<br><br>Take care of yourself, okay?<br>🌷🐼</p>
+    <button class="btn" data-close>Okayyy 🥹</button>
+  </div>
+</div>
+
+<!-- final -->
+<div class="ov final" id="ov-final">
+  <div class="stars"></div>
+  <div class="flowers" id="finalFlowers"></div>
+  <div class="walk panda" data-panda="happy" id="finalPanda"></div>
+  <div class="ftext">
+    <p class="f1">Okay bachaaaaa...<br>that's it.</p>
+    <p class="f2">Now go rest. 😭🫂</p>
+    <p class="f3 hand">From Nissuuu → Nashuuu</p>
+    <button class="btn ghost f4" data-close>Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
